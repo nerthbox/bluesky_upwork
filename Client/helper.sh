@@ -210,6 +210,6 @@ if [ ${weLaunched:-0} -lt 2 ]; then
 fi
 
 # add the bluesky user to sudoers to allow for proper autossh and sudo use in bluesky.sh
-echo 'bluesky	ALL=(ALL:ALL) NOPASSWD:$ourHome/autossh' >> /etc/sudoers
+echo "bluesky	ALL=(ALL:ALL) NOPASSWD: $ourHome/autossh" >> /etc/sudoers
 
 exit 0
