@@ -126,10 +126,11 @@ function startMeUp {
     noRoam="-o UseRoaming=no"
   fi
   ## main command right here
-  $ourHome/autossh -M $monport -f \
+  sudo $ourHome/autossh -M $monport -f \
   -c $prefCipher -m $msgAuth \
   $kexAlg \
   -o HostKeyAlgorithms=$keyAlg \
+  -o StrictHostKeyChecking=no \
   -nNT -R $sshport:127.0.0.1:$altPort -R $vncport:127.0.0.1:5900 -p 3122 \
   $noRoam \
   -i "$ourHome/.ssh/bluesky_client" bluesky@$blueskyServer
